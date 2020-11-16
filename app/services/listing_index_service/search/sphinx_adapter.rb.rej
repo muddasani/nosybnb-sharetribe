@@ -1,0 +1,10 @@
+--- app/services/listing_index_service/search/sphinx_adapter.rb
++++ app/services/listing_index_service/search/sphinx_adapter.rb
+@@ -70,6 +72,7 @@
+             listing_shape_id: search[:listing_shape_id],
+             price_cents: search[:price_cents],
+             listing_id: numeric_search_match_listing_ids,
++            geodist: geo_search[:distance_max]
+           })
+ 
+         selection_groups = search[:fields].select { |v| v[:type] == :selection_group }
